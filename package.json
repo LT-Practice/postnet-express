@@ -1,0 +1,25 @@
+{
+  "name": "postnet-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeonardLT/postnet-express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeonardLT/postnet-express/issues"
+  },
+  "homepage": "https://github.com/LeonardLT/postnet-express#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "lodash": "^4.14.1",
+    "readline-sync": "^1.4.4"
+  }
+}
