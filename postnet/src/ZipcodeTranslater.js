@@ -41,10 +41,12 @@ class ZipcodeTranslater {
     checkZipcode(zipcode) {
 
         let formatCode = zipcode.replace(/-/g, '');
-        let hyphenPosition = zipcode.length === 10 ? zipcode.includes('-', 5) : true;
-
+        // let hyphenPosition = zipcode.length === 10 ? zipcode.includes('-', 5) : true;
+        let hyphenPosition = zipcode.length >5 ? zipcode.includes('-', 5) : true;
+        // console.log(hyphenPosition);
         let onlyOneHyphen = zipcode.indexOf('-') === zipcode.lastIndexOf('-');
-
+        // console.log(zipcode.includes('-', 5));
+        // let temzipcode.includes('-', 5);
         // let temp = parseInt(formatCode).toString();
         // // let isNumber = (temp.length === formatCode.length) ? true:false;//!isNaN(temp);
         let format = parseInt(formatCode).toString();

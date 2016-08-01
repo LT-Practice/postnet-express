@@ -1,31 +1,41 @@
 let express = require('express');
+let bodyParser = require("body-parser");
+
 let BarcodeToZipcode = require('./postnet/src/BarcodeTranslater');
 let ZipcodeToBarcode = require('./postnet/src/ZipcodeTranslater');
 let app = express();
 
-// app.get('/', function (req, res) {
-//     res.send(new BarcodeToZipcode().execute('||:|:::|:|:|:::|:::||::||::|:|:|'));
-// });
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+
 app.get('/', function (req, res) {
     res.sendfile('./index.html');
-});
-app.get('/result', function (req, res) {
-    let barcodeTranslater = new BarcodeToZipcode();
-    let zipcodeTranslater = new ZipcodeToBarcode();
-    let code = req.query.Barcode;
-    let typeBarcode = barcodeTranslater.checkBarcode(code).type;
-    let typeZipcode = zipcodeTranslater.checkZipcode(code).type;
-    if (typeBarcode) {
-        res.send('Hello GET:' + barcodeTranslater.execute(req.query.Barcode)._result);
-    } else if (typeZipcode) {
-        res.send('Hello GET:' + zipcodeTranslater.execute(req.query.Barcode)._result);
-    } else {
-        res.send("输入错误.");
-    }
 
 });
-app.get('/hello', function (req, res) {
-    res.send("Hello!");
+
+
+app.post('/result', function (req, res) {
+
+    let code = req.body.zipcode;
+    let barcodeTranslater = new BarcodeToZipcode();
+    let typeBarcode = barcodeTranslater.checkBarcode(code).type;
+
+    // console.log(typeBarcode);
+
+    let zipcodeTranslater = new ZipcodeToBarcode();
+    let typeZipcode = zipcodeTranslater.checkZipcode(code).type;
+    // console.log(typeZipcode);
+
+    if (typeZipcode) {
+        res.send("转码结果是：" + zipcodeTranslater.execute(code)._result);
+
+    } else if (typeBarcode) {
+        res.send("转码结果是：" + barcodeTranslater.execute(code)._result);
+
+    }
+    else {
+        res.send("您输入的结果有误，请重新输入。");
+    }
 
 });
 
@@ -33,3 +43,5 @@ app.get('/hello', function (req, res) {
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!');
 });
+
+
