@@ -10,6 +10,8 @@ class TransformZipToBarcodeCommand {
         // let zipcodeTranslater = new ZipcodeTranslater();
         // let coreResponse = new ZipcodeTranslater().zipcodeToBarcode(zipcode);
         let coreResponse = new ZipcodeTranslater().checkZipcode(zipcode);
+        // console.log(new ZipcodeTranslater().checkZipcode(zipcode));
+        // console.log(coreResponse.type);
         if (coreResponse.type) {
             let coreResponse = new ZipcodeTranslater().zipcodeToBarcode(zipcode);
             let text = coreResponse._result;

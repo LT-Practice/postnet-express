@@ -54,8 +54,15 @@ class ZipcodeTranslater {
             return {zipcode, type: false};
 
         }
-
-        if (formatCode.length === 5 || formatCode.length === 9 && hyphenPosition && onlyOneHyphen) {
+        // console.log(onlyOneHyphen);
+        // console.log(hyphenPosition);
+        // console.log(formatCode.length);
+        // console.log(zipcode.includes('-', 5));
+        // console.log(formatCode.length === 5 || formatCode.length === 9 && hyphenPosition && onlyOneHyphen);
+        // if ((formatCode.length === 5 || formatCode.length === 9) && hyphenPosition && onlyOneHyphen) {
+        // console.log(zipcode.length);
+        if ((zipcode.length === 5 || zipcode.length === 9||zipcode.length === 10) && hyphenPosition && onlyOneHyphen) {
+            // console.log('123');
             return {zipcode, type: true};
         } else {
             return {zipcode, type: false};

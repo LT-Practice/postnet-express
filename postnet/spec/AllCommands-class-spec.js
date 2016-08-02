@@ -34,6 +34,7 @@ Please input your choices(1~3)`;
         expect(goToZipToBarcodePageCommand.execute()).toEqual(expected);
     });
 
+
     it('#1.right input', () => {
         let transformZipToBarcodeCommand = new TransformZipToBarcodeCommand();
         let zipcode = '12345';
@@ -60,7 +61,7 @@ Please input your choices(1~3)`;
     });
     fit('#1. input wrong zipcode', () => {
         let transformZipToBarcodeCommand = new TransformZipToBarcodeCommand();
-        let zipcode = '-23452';
+        let zipcode = '23452-';
         let result = transformZipToBarcodeCommand.execute(zipcode);
         let text = 'Please give right input:\n';
         let next = transformZipToBarcodeCommand.goToZipToBarcodePage;
