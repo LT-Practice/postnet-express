@@ -21,6 +21,7 @@
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "lodash": "^4.14.1",
-    "readline-sync": "^1.4.4"
+    "readline-sync": "^1.4.4",
+    "request": "^2.74.0"
   }
 }

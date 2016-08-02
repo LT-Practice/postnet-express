@@ -18,7 +18,7 @@ Please input your choices(1~3)`;
         let next = false;
         let reset = false;
         let newMapping = null;
-            expected = new CommandResponse(text, next, reset, newMapping);
+        expected = new CommandResponse(text, next, reset, newMapping);
         expect(mainCommand.execute()).toEqual(expected);
     });
 
@@ -44,7 +44,7 @@ Please input your choices(1~3)`;
         let next = false;
         let reset = true;
         let newMapping = null;
-        let expected = new CommandResponse(text,next,reset,newMapping);
+        let expected = new CommandResponse(text, next, reset, newMapping);
 
         expect(result).toEqual(expected);
     });
@@ -56,7 +56,7 @@ Please input your choices(1~3)`;
         let next = transformZipToBarcodeCommand.goToZipToBarcodePage;
         let reset = false;
         let newMappiing = null;
-        let expected = new CommandResponse(text,next,reset,newMappiing);
+        let expected = new CommandResponse(text, next, reset, newMappiing);
         expect(result).toEqual(expected);
     });
     it('#1.wrong input', () => {
@@ -67,7 +67,7 @@ Please input your choices(1~3)`;
         let next = transformZipToBarcodeCommand.goToZipToBarcodePage;
         let reset = false;
         let newMappiing = null;
-        let expected = new CommandResponse(text,next,reset,newMappiing);
+        let expected = new CommandResponse(text, next, reset, newMappiing);
         expect(result).toEqual(expected);
     });
     it('#1. input wrong zipcode', () => {
@@ -78,7 +78,7 @@ Please input your choices(1~3)`;
         let next = transformZipToBarcodeCommand.goToZipToBarcodePage;
         let reset = false;
         let newMappiing = null;
-        let expected = new CommandResponse(text,next,reset,newMappiing);
+        let expected = new CommandResponse(text, next, reset, newMappiing);
         expect(result).toEqual(expected);
     });
     it('#1. input wrong zipcode', () => {
@@ -89,7 +89,7 @@ Please input your choices(1~3)`;
         let next = transformZipToBarcodeCommand.goToZipToBarcodePage;
         let reset = false;
         let newMappiing = null;
-        let expected = new CommandResponse(text,next,reset,newMappiing);
+        let expected = new CommandResponse(text, next, reset, newMappiing);
         expect(result).toEqual(expected);
     });
     it('#1. input wrong zipcode', () => {
@@ -100,7 +100,7 @@ Please input your choices(1~3)`;
         let next = transformZipToBarcodeCommand.goToZipToBarcodePage;
         let reset = false;
         let newMappiing = null;
-        let expected = new CommandResponse(text,next,reset,newMappiing);
+        let expected = new CommandResponse(text, next, reset, newMappiing);
         expect(result).toEqual(expected);
     });
 

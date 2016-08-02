@@ -42,7 +42,7 @@ class ZipcodeTranslater {
 
         let formatCode = zipcode.replace(/-/g, '');
         // let hyphenPosition = zipcode.length === 10 ? zipcode.includes('-', 5) : true;
-        let hyphenPosition = zipcode.length >5 ? zipcode.includes('-', 5) : true;
+        let hyphenPosition = zipcode.length > 5 ? zipcode.includes('-', 5) : true;
         // console.log(hyphenPosition);
         let onlyOneHyphen = zipcode.indexOf('-') === zipcode.lastIndexOf('-');
         // console.log(zipcode.includes('-', 5));
@@ -61,7 +61,7 @@ class ZipcodeTranslater {
         // console.log(formatCode.length === 5 || formatCode.length === 9 && hyphenPosition && onlyOneHyphen);
         // if ((formatCode.length === 5 || formatCode.length === 9) && hyphenPosition && onlyOneHyphen) {
         // console.log(zipcode.length);
-        if ((formatCode.length === 5 || formatCode.length === 9)&&(zipcode.length === 5 || zipcode.length === 9||zipcode.length === 10) && hyphenPosition && onlyOneHyphen) {
+        if ((formatCode.length === 5 || formatCode.length === 9) && (zipcode.length === 5 || zipcode.length === 9 || zipcode.length === 10) && hyphenPosition && onlyOneHyphen) {
             // console.log('123');
             return {zipcode, type: true};
         } else {

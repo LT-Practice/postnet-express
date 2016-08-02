@@ -7,7 +7,7 @@
 </head>
 <body>
 <!--<form action="http://127.0.0.1:3000/zipcode" method="get">-->
-<input type="text" id="zipcode" name="zipcode" placeholder="请输入邮编">
+<input type="text" id="code" name="code" placeholder="请输入邮编">
 <input type="submit" value="转码" id="button1">
 <div id="div1">
     <!--<input type="text" value="">-->
@@ -20,7 +20,7 @@
                 type: "POST",
                 url: "http://localhost:3000/result",
                 async: true,
-                data: "zipcode=" + $('#zipcode').val(),
+                data: "code=" + $('#code').val(),
                 success: function (result) {
                     $("#div1").html(result);
                 },
