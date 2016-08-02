@@ -59,7 +59,7 @@ Please input your choices(1~3)`;
         let expected = new CommandResponse(text,next,reset,newMappiing);
         expect(result).toEqual(expected);
     });
-    fit('#1. input wrong zipcode', () => {
+    it('#1. input wrong zipcode', () => {
         let transformZipToBarcodeCommand = new TransformZipToBarcodeCommand();
         let zipcode = '23452-';
         let result = transformZipToBarcodeCommand.execute(zipcode);
