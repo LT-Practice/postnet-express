@@ -4,6 +4,7 @@ let bodyParser = require("body-parser");
 let BarcodeToZipcode = require('./postnet/src/BarcodeTranslater');
 let ZipcodeToBarcode = require('./postnet/src/ZipcodeTranslater');
 let Route = require('./postnet/src/Route');
+// let Main = require
 
 let app = express();
 
@@ -18,8 +19,7 @@ app.get('/', function (req, res) {
 app.post('/result2', function (req, res) {
 
     let code = req.body.code;
-    let route = new Route().execute(code);
-    res.send(route);
+    res.send(result);
 });
 
 
