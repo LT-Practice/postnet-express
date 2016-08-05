@@ -2,6 +2,8 @@
 ```
 1.npm install
 
-2.input `http://localhost:3000/` in your Chrome
+2.node app.js
+
+3.input `http://localhost:3000/` in your Chrome
 
 ```
