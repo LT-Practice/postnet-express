@@ -2,7 +2,6 @@
 ```
 1.npm install
 
-2.first :node app.js
+2.input `http://localhost:3000/` in your Chrome
 
-  then :node client.js
 ```
